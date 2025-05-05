@@ -1,0 +1,28 @@
+{
+  "name": "functional-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test e2e-tests/management",
+    "test:regression": "playwright test e2e-tests/management --grep @regression",
+    "test:api": "playwright test api-tests/management",
+    "test:performance": "playwright test performance-tests/management",
+    "test:updateBlob": "npx ts-node updateBlob.ts",
+    "test:merge": "npx playwright merge-reports --reporter html ./all-blob-reports",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:headed": "playwright test --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
