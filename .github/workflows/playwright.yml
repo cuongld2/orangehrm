@@ -4,6 +4,8 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
 
 jobs:
   playwright-tests:
@@ -17,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright browsers
-      run: npx playwright install --with-deps
+      run: npx playwright install --with-deps chromium
 
     - name: Run Playwright UI tests
       run: npm run test:ui
