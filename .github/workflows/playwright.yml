@@ -26,6 +26,7 @@ jobs:
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
+        name: report-ui
         pattern: report-*
         path: blob-report
         retention-days: 1
@@ -35,6 +36,7 @@ jobs:
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
+        name: report-regression
         pattern: report-*
         path: blob-report
         retention-days: 1
@@ -44,6 +46,7 @@ jobs:
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
+        name: report-api
         pattern: report-*
         path: blob-report
         retention-days: 1
@@ -53,6 +56,7 @@ jobs:
       if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v4
       with:
+        name: report-performance
         pattern: report-*
         path: blob-report
         retention-days: 1
